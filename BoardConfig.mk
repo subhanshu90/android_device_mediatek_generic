@@ -18,7 +18,7 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
 TARGET_PREBUILT_KERNEL := device/mediatek/generic/kernel
-BOARD_KERNEL_CMDLINE := 
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_CUSTOM_BOOTIMG_MK := device/mediatek/generic/mkbootimg.mk
@@ -55,3 +55,23 @@ TW_INCLUDE_CRYPTO := true
 TW_MAX_BRIGHTNESS := 255
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+#Ignore Missing Dependencies
+ALLOW_MISSING_DEPENDENCIES=true
+
+
+#SHRP_Variables
+SHRP_PATH := device/micromax/A311
+SHRP_MAINTAINER := subh
+SHRP_DEVICE_CODE := A311
+SHRP_EDL_MODE := 1
+SHRP_EXTERNAL := /external_sd
+SHRP_INTERNAL := /sdcard
+SHRP_OTG := /usbotg
+SHRP_REC := /dev/block/bootdevice/by-name/recovery
+SHRP_REC_TYPE : normal
+SHRP_DEVICE_TYPE := A-Only
+SHRP_FLASH := 1
+#SHRP_FONP_1 := /sys/class/leds/led:torch_0/brightness
+#SHRP_FONP_2 := /sys/class/leds/led:torch_1/brightness
+#SHRP_FONP_3 := /sys/class/leds/led:switch/brightness
+#SHRP_FLASH_MAX_BRIGHTNESS := 200
